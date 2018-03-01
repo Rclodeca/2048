@@ -6,10 +6,23 @@ public class Tile {
 
 	private int value;
 	
+	public Tile(){
+		value = -1;
+	}
+	/**
+	 * 
+	 * @param value 
+	 * 			value is the value that the tile holds (2-2048)
+	 */
 	public Tile(int value){
 		this.value = value;
 	}
-	
+	/**
+	 * 
+	 * @param t
+	 * 		t is the UI text element whose color is being updated
+	 * 
+	 */
 	public void setColor(Text t){
 		if (value > 8)
 			t.setForeground(SWTResourceManager.getColor(255,255,255));

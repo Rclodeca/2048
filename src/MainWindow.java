@@ -67,8 +67,9 @@ public class MainWindow {
 	    textPopUp.setFont(SWTResourceManager.getFont("Segoe UI", 40, SWT.NORMAL));
 	    textPopUp.setEnabled(false);
 	    
-	    //game board start
-	    
+	    /**
+	     * UI elements for game board.
+	     */
 	    text03 = new Text(page0, SWT.BORDER | SWT.READ_ONLY | SWT.CENTER);
 	    text03.setEnabled(false);
 	    text03.setBackground(SWTResourceManager.getColor(211, 211, 211));

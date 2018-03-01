@@ -7,13 +7,17 @@ public class Game2048 {
 	private int score;
 	private Tile tile;
 	
-	
+	/**
+     * Initiate new Game
+     */
 	public Game2048(){
 		score = 0;
 		setBoard();
 		sync();
 	}
-	
+	/**
+     * Set up the board.
+     */
 	public void setBoard(){
 		board = new int[4][4];
 		for(int i=0; i<=3; i++){
@@ -24,7 +28,9 @@ public class Game2048 {
 		setRandomTwoOrFour();
 		setRandomTwoOrFour();
 	}
-	
+	/**
+     * Place a random 2 or 4 tile on the board
+     */
 	public void setRandomTwoOrFour(){
 		if (isBoardFull())
 			return;
@@ -36,7 +42,9 @@ public class Game2048 {
 			setRandomTwoOrFour();
 	}
 	
-	
+	/**
+     * Check for full board
+     */
 	public boolean isBoardFull(){
 		for(int i=0; i<=3; i++){
 			for(int j=0; j<=3; j++){
@@ -46,7 +54,9 @@ public class Game2048 {
 		}
 		return true;
 	}
-	
+	/**
+     * Check for game over situation
+     */
 	public void loseCheck(){
 		if(!isBoardFull())
 			return;
@@ -64,7 +74,9 @@ public class Game2048 {
 	   
 		
 	}
-	
+	/**
+     * Game Move: Up
+     */
 	public void up(){
 		check = new int[4][4];
 		for(int i=0; i<=3; i++){
@@ -125,7 +137,9 @@ public class Game2048 {
 		sync();
 	}
 	
-	
+	/**
+     * Game Move: Down
+     */
 	public void down(){
 		check = new int[4][4];
 		for(int i=0; i<=3; i++){
@@ -186,7 +200,9 @@ public class Game2048 {
 		sync();
 	}
 	
-	
+	/**
+     * Game Move: left
+     */
 	public void left(){
 		check = new int[4][4];
 		for(int i=0; i<=3; i++){
@@ -247,7 +263,9 @@ public class Game2048 {
 		sync();
 	}
 	
-	
+	/**
+     * Game Move: right
+     */
 	public void right(){
 		check = new int[4][4];
 		for(int i=0; i<=3; i++){
@@ -308,6 +326,9 @@ public class Game2048 {
 		sync();
 	}
 	
+	/**
+     * Sync UI game board with 2D array logic game board 
+     */
 	public void sync(){
 		MainWindow.text33.setText(textConv(board[3][3]));
 		tile = new Tile(board[3][3]);
@@ -366,7 +387,9 @@ public class Game2048 {
 		else
 			return Integer.toString(x);
 	}
-	
+	/**
+     * Prints the board
+     */
 	public void printBoard(){
 		for(int i=3; i>=0; i--){
 			System.out.printf("%-5d%-5d%-5d%-5d\n",board[0][i] , board[1][i] , board[2][i] , board[3][i]);

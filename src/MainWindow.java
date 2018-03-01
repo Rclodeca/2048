@@ -210,14 +210,9 @@ public class MainWindow {
 	    text_1.setBackground(SWTResourceManager.getColor(169, 169, 169));
 	    text_1.setBounds(113, 108, 354, 354);
 	    
-		
-	
-		
-		
-		
-		
-		
-		//second page
+	    /**
+	     * UI elements 'Rules' window.
+	     */
 		final Composite page1 = new Composite (contentPanel, SWT.NONE);
 	    Text txtHow;
 	    page1.setLayout(null);
@@ -241,11 +236,9 @@ public class MainWindow {
 	    btnBack.setBounds(244, 446, 90, 30);
 	    btnBack.setText("Back");
 	    
-	    
-	    
-	
-		
-		
+	    /**
+	     * UI elements menu bar.
+	     */
 		Menu menu = new Menu(shell, SWT.BAR);
 		shell.setMenuBar(menu);
 		
@@ -286,10 +279,9 @@ public class MainWindow {
 		});
 		mntmRules_1.setText("Rules");
 		
-		
-		
-		
-		
+		/**
+	     * Set up keyboard interaction.
+	     */
 		shell.getDisplay().addFilter(SWT.KeyDown, new Listener(){
 			  public void handleEvent(Event e)
 			  {
@@ -314,11 +306,6 @@ public class MainWindow {
 			if (!display.readAndDispatch ()) display.sleep ();
 		}
 		display.dispose ();
-	
-		
-	
-	
-	
 	
 	}
 	}
